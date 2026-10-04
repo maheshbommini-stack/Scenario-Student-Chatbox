@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Problem Solver</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- HEADER -->
+
+        <header class="top-bar">
+
+            <div class="brand">
+                <div class="bot-logo">🧠</div>
+
+                <div>
+                    <h1>Student Solver</h1>
+                    <p><span class="online"></span> AI Assistant</p>
+                </div>
+            </div>
+
+            <button class="clear-btn" onclick="clearChat()">
+                ↻ New Chat
+            </button>
+
+        </header>
+
+
+        <!-- MAIN AREA -->
+
+        <main class="main-area">
+
+            <!-- CHAT -->
+
+            <section class="chat-section">
+
+                <div class="welcome">
+
+                    <div class="big-icon">🤖</div>
+
+                    <h2>How can I help you?</h2>
+
+                    <p>
+                        Tell me about your student problem and
+                        I'll help you find the next step.
+                    </p>
+
+                    <div class="suggestions">
+
+                        <button onclick="quickMessage('I have low attendance')">
+                            📊 Low Attendance
+                        </button>
+
+                        <button onclick="quickMessage('I missed an exam')">
+                            📝 Missed Exam
+                        </button>
+
+                        <button onclick="quickMessage('I lost my ID card')">
+                            🪪 Lost ID Card
+                        </button>
+
+                        <button onclick="quickMessage('I cannot understand programming')">
+                            💻 Programming Problem
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div id="chatBox" class="chat-box"></div>
+
+
+                <!-- TYPING -->
+
+                <div id="typing" class="typing hidden">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <small>Student Solver is thinking...</small>
+
+                </div>
+
+
+                <!-- INPUT -->
+
+                <div class="input-area">
+
+                    <input
+                        type="text"
+                        id="userInput"
+                        placeholder="Describe your problem..."
+                        onkeydown="handleEnter(event)"
+                    >
+
+                    <button onclick="sendMessage()" class="send-btn">
+                        ➤
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ANALYSIS PANEL -->
+
+            <aside class="analysis-panel">
+
+                <div class="panel-title">
+                    <span>📊</span>
+                    <h3>Problem Analysis</h3>
+                </div>
+
+
+                <div class="analysis-card">
+
+                    <label>DETECTED PROBLEM</label>
+
+                    <h3 id="problemType">
+                        Waiting for input
+                    </h3>
+
+                </div>
+
+
+                <div class="analysis-card">
+
+                    <label>PRIORITY</label>
+
+                    <div id="priority" class="priority normal">
+                        NORMAL
+                    </div>
+
+                </div>
+
+
+                <div class="analysis-card">
+
+                    <label>RECOMMENDED ACTION</label>
+
+                    <p id="nextAction">
+                        Tell me about your problem to begin.
+                    </p>
+
+                </div>
+
+
+                <div class="analysis-card progress-card">
+
+                    <label>CONVERSATION</label>
+
+                    <div class="progress">
+
+                        <div id="progressBar"></div>
+
+                    </div>
+
+                    <p id="progressText">
+                        0% analyzed
+                    </p>
+
+                </div>
+
+
+                <div class="tips">
+
+                    <h4>💡 Tip</h4>
+
+                    <p>
+                        Give specific details about your
+                        situation for better guidance.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
